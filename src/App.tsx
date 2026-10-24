@@ -101,16 +101,17 @@ export const App: React.FC = () => {
               left: '106px',
               top: '203px',
               width: '359px',
-              height: '438px',
+              height: '495px',
             }}
           >
             {/* 
               Polaroid Photo Window:
               - Width: 327px (equal 16px borders on left/right)
-              - Height: 348px (16px top border, leaving 74px ≈ 1.96cm bottom chin, not more than 2cm)
+              - Height: 405px (increased vertically by 1.5cm ≈ 57px from 348px)
+              - Bottom polaroid space: 74px ≈ 1.96cm (about 2cm, not more than that)
               - Restored original center crop and natural scale
             */}
-            <div className="w-[327px] h-[348px] shrink-0 overflow-hidden bg-black/60 relative">
+            <div className="w-[327px] h-[405px] shrink-0 overflow-hidden bg-black/60 relative">
               <img
                 src="/images/photo.jpg"
                 alt="Portrait"
@@ -288,10 +289,10 @@ export const App: React.FC = () => {
           </header>
 
           <main className="flex-1 flex flex-col items-center justify-center my-6">
-            <div className="relative w-[340px] h-[400px] mb-8">
+            <div className="relative w-[340px] h-[430px] mb-8">
               {/* Polaroid Frame in Mobile */}
-              <div className="absolute left-[30px] top-[40px] w-[260px] h-[320px] bg-brand-dark pt-[12px] px-[12px] flex flex-col items-center">
-                <div className="w-[236px] h-[254px] shrink-0 overflow-hidden bg-black/60 relative">
+              <div className="absolute left-[30px] top-[40px] w-[260px] h-[360px] bg-brand-dark pt-[12px] px-[12px] flex flex-col items-center">
+                <div className="w-[236px] h-[294px] shrink-0 overflow-hidden bg-black/60 relative">
                   <img src="/images/photo.jpg" alt="Portrait" className="w-full h-full object-cover object-center" />
                 </div>
               </div>
