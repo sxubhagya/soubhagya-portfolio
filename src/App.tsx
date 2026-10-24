@@ -104,12 +104,17 @@ export const App: React.FC = () => {
               height: '438px',
             }}
           >
-            {/* Square Polaroid Photo Window (Framed to show more of the bottom) */}
-            <div className="w-[327px] h-[327px] shrink-0 overflow-hidden bg-black/60 relative">
+            {/* 
+              Polaroid Photo Window:
+              - Width: 327px (equal 16px borders on left/right)
+              - Height: 348px (16px top border, leaving 74px ≈ 1.96cm bottom chin, not more than 2cm)
+              - Restored original center crop and natural scale
+            */}
+            <div className="w-[327px] h-[348px] shrink-0 overflow-hidden bg-black/60 relative">
               <img
                 src="/images/photo.jpg"
                 alt="Portrait"
-                className="w-full h-full object-cover object-[center_75%] select-none"
+                className="w-full h-full object-cover object-center select-none"
                 draggable={false}
               />
               {/* Subtle vintage photo surface sheen */}
@@ -286,8 +291,8 @@ export const App: React.FC = () => {
             <div className="relative w-[340px] h-[400px] mb-8">
               {/* Polaroid Frame in Mobile */}
               <div className="absolute left-[30px] top-[40px] w-[260px] h-[320px] bg-brand-dark pt-[12px] px-[12px] flex flex-col items-center">
-                <div className="w-[236px] h-[236px] shrink-0 overflow-hidden bg-black/60 relative">
-                  <img src="/images/photo.jpg" alt="Portrait" className="w-full h-full object-cover object-[center_75%]" />
+                <div className="w-[236px] h-[254px] shrink-0 overflow-hidden bg-black/60 relative">
+                  <img src="/images/photo.jpg" alt="Portrait" className="w-full h-full object-cover object-center" />
                 </div>
               </div>
               {/* Bowtie */}
@@ -298,7 +303,7 @@ export const App: React.FC = () => {
               <div className="absolute left-[15px] top-[20px] w-[60px] h-[54px] z-30 pointer-events-none">
                 <img src="/stickers/stars.png" alt="Stars" className="w-full h-full object-contain" />
               </div>
-              {/* Builder Badge (Shifted right in mobile) */}
+              {/* Builder Badge */}
               <div className="absolute left-[155px] top-[140px] w-[180px] h-[45px] z-30 bg-brand-ice text-brand-navy flex items-center justify-center font-helvetica text-[15px]">
                 i am a builder by &lt;3
               </div>
