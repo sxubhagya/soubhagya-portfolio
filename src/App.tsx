@@ -94,16 +94,28 @@ export const App: React.FC = () => {
             </button>
           </nav>
 
-          {/* 1. Dark Midnight Card (#01081d) */}
+          {/* 1. Dark Midnight Card (#01081d) - Styled as Polaroid Frame */}
           <div
-            className="absolute bg-brand-dark rounded-none"
+            className="absolute bg-brand-dark rounded-none flex flex-col items-center pt-[16px] px-[16px] overflow-hidden shadow-lg transition-transform duration-300"
             style={{
               left: '106px',
               top: '203px',
               width: '359px',
               height: '438px',
             }}
-          />
+          >
+            {/* Square Polaroid Photo Window (327x327 with 95px bottom chin) */}
+            <div className="w-[327px] h-[327px] shrink-0 overflow-hidden bg-black/60 relative">
+              <img
+                src="/images/photo.jpg"
+                alt="Portrait"
+                className="w-full h-full object-cover object-center select-none"
+                draggable={false}
+              />
+              {/* Subtle vintage photo surface sheen */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-black/10 via-transparent to-white/10 pointer-events-none" />
+            </div>
+          </div>
 
           {/* 2. Bowtie ASCII Sticker (Static as in original design) */}
           <div
@@ -272,7 +284,12 @@ export const App: React.FC = () => {
 
           <main className="flex-1 flex flex-col items-center justify-center my-6">
             <div className="relative w-[340px] h-[400px] mb-8">
-              <div className="absolute left-[30px] top-[40px] w-[260px] h-[320px] bg-brand-dark" />
+              {/* Polaroid Frame in Mobile */}
+              <div className="absolute left-[30px] top-[40px] w-[260px] h-[320px] bg-brand-dark pt-[12px] px-[12px] flex flex-col items-center">
+                <div className="w-[236px] h-[236px] shrink-0 overflow-hidden bg-black/60 relative">
+                  <img src="/images/photo.jpg" alt="Portrait" className="w-full h-full object-cover object-center" />
+                </div>
+              </div>
               {/* Bowtie */}
               <div className="absolute left-[190px] top-[0px] w-[130px] h-[250px] z-20 pointer-events-none">
                 <img src="/stickers/bowtie.png" alt="Bowtie" className="w-full h-full object-contain" />
