@@ -104,12 +104,12 @@ export const App: React.FC = () => {
               height: '438px',
             }}
           >
-            {/* Square Polaroid Photo Window (327x327 with 95px bottom chin) */}
+            {/* Square Polaroid Photo Window (Framed to show more of the bottom) */}
             <div className="w-[327px] h-[327px] shrink-0 overflow-hidden bg-black/60 relative">
               <img
                 src="/images/photo.jpg"
                 alt="Portrait"
-                className="w-full h-full object-cover object-center select-none"
+                className="w-full h-full object-cover object-[center_75%] select-none"
                 draggable={false}
               />
               {/* Subtle vintage photo surface sheen */}
@@ -153,11 +153,11 @@ export const App: React.FC = () => {
             />
           </div>
 
-          {/* 4. "i am a builder by <3" Badge */}
+          {/* 4. "i am a builder by <3" Badge (Shifted ~1.5cm right to left: 342px) */}
           <div
             className="absolute z-30 bg-brand-ice text-brand-navy flex items-center justify-center font-helvetica text-[19px] font-normal tracking-tight select-none shadow-sm transition-transform duration-200 hover:-translate-y-0.5"
             style={{
-              left: '285px',
+              left: '342px',
               top: '337px',
               width: '243px',
               height: '55px',
@@ -287,7 +287,7 @@ export const App: React.FC = () => {
               {/* Polaroid Frame in Mobile */}
               <div className="absolute left-[30px] top-[40px] w-[260px] h-[320px] bg-brand-dark pt-[12px] px-[12px] flex flex-col items-center">
                 <div className="w-[236px] h-[236px] shrink-0 overflow-hidden bg-black/60 relative">
-                  <img src="/images/photo.jpg" alt="Portrait" className="w-full h-full object-cover object-center" />
+                  <img src="/images/photo.jpg" alt="Portrait" className="w-full h-full object-cover object-[center_75%]" />
                 </div>
               </div>
               {/* Bowtie */}
@@ -298,8 +298,8 @@ export const App: React.FC = () => {
               <div className="absolute left-[15px] top-[20px] w-[60px] h-[54px] z-30 pointer-events-none">
                 <img src="/stickers/stars.png" alt="Stars" className="w-full h-full object-contain" />
               </div>
-              {/* Builder Badge */}
-              <div className="absolute left-[130px] top-[140px] w-[180px] h-[45px] z-30 bg-brand-ice text-brand-navy flex items-center justify-center font-helvetica text-[15px]">
+              {/* Builder Badge (Shifted right in mobile) */}
+              <div className="absolute left-[155px] top-[140px] w-[180px] h-[45px] z-30 bg-brand-ice text-brand-navy flex items-center justify-center font-helvetica text-[15px]">
                 i am a builder by &lt;3
               </div>
               {/* Education Box */}
